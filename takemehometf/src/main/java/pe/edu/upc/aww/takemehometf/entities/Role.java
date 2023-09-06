@@ -12,9 +12,8 @@ public class Role implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    public String rol;
-
+    public String traveler;
+    public String customer;
     @ManyToOne
     @JoinColumn(name="user_id",nullable = false)
     private User user;
@@ -27,12 +26,20 @@ public class Role implements Serializable {
         this.id = id;
     }
 
-    public String getRol() {
-        return rol;
+    public String getTraveler() {
+        return traveler;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setTraveler(String traveler) {
+        this.traveler = traveler;
+    }
+
+    public String getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
     }
 
     public User getUser() {
