@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class JwUserDetailsService implements UserDetailsService {
+public class JwtUserDetailsService implements UserDetailsService {
     @Autowired
     private IUserRepository repo;
     @Override

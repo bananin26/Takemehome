@@ -3,7 +3,7 @@ package pe.edu.upc.aww.takemehometf.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import pe.edu.upc.aww.takemehometf.serviceimplements.JwUserDetailsService;
+import pe.edu.upc.aww.takemehometf.serviceimplements.JwtUserDetailsService;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -15,7 +15,7 @@ import java.io.IOException;
 public class JwtRequestFilter extends OncePerRequestFilter {
 @Autowired
 
-private JwUserDetailsService userDetailsService;
+private JwtUserDetailsService userDetailsService;
 private JwtTokenUtil jwtTokenUtil;
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
