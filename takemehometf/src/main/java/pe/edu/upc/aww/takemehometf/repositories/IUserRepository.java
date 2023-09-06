@@ -9,5 +9,4 @@ import java.util.List;
 
 public interface IUserRepository extends JpaRepository<User,Integer> {
     List<User> findByBirthday(LocalDate birthday);
-    public User findByUsername(String username);
 }

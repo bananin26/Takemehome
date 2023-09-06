@@ -22,7 +22,7 @@ public class NotificationController {
         Notification n = m.map(dto, Notification.class);
         nS.insert(n);
     }
-
+    @GetMapping
     public List<NotificationDTO> listar() {
         return nS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
@@ -41,6 +41,23 @@ public class NotificationController {
         ModelMapper m=new ModelMapper();
         NotificationDTO dto=m.map(nS.listTitle(title),NotificationDTO.class);
         return dto;
+
+
+    }
+    @PostMapping("/search:)")
+    public List<NotificationDTO>search(@RequestBody String title){
+        return nS.findByTitle(title).stream().map(x->{
+            ModelMapper m= new ModelMapper();
+            return m.map(x,NotificationDTO.class);
+
+        }).collect(Collectors.toList());
+
+    }
+    @PutMapping
+    public void change(@RequestBody NotificationDTO dto){
+        ModelMapper m= new ModelMapper();
+        Notification p=m.map(dto,Notification.class);
+        nS.insert(p);
 
 
     }

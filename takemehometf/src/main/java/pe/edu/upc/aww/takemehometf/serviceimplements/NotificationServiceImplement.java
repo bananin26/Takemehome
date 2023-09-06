@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import pe.edu.upc.aww.takemehometf.entities.Notification;
 import pe.edu.upc.aww.takemehometf.repositories.INotificationRepository;
 import pe.edu.upc.aww.takemehometf.serviceinterfaces.INotificationService;
-
 import java.util.List;
 
 @Service
@@ -33,4 +32,10 @@ public class NotificationServiceImplement implements INotificationService {
     public Notification listTitle(int Title) {
         return nR.findById(Title).orElse(new Notification());
     }
+
+    @Override
+    public List<Notification>findByTitle(String title){return nR.findByTitle(title);}
+
+
+
 }

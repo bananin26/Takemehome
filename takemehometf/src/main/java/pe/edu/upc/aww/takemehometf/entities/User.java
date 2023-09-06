@@ -3,7 +3,6 @@ package pe.edu.upc.aww.takemehometf.entities;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -27,11 +26,7 @@ public class User {
     private String country;
     @Column(name = "password",nullable = false)
     private String password;
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private List<Role> roles;
 
-    private Boolean enabled;
     public User() {
     }
 
@@ -46,14 +41,6 @@ public class User {
         this.birthday = birthday;
         this.country = country;
         this.password = password;
-    }
-
-    public Boolean getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
     }
 
     public int getIdUser() {
@@ -126,13 +113,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public List<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
     }
 }
