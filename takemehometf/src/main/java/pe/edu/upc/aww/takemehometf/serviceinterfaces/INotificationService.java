@@ -10,7 +10,7 @@ public interface INotificationService  {
     public List<Notification> list();
     public void delete(int idNotification);
     public  Notification listTitle(int Title);
-
+    List<Notification>findByTitle(String title);
 
 
 }
