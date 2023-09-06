@@ -31,6 +31,7 @@ public class User {
     @JoinColumn(name = "user_id")
     private List<Role> roles;
 
+    private Boolean enabled;
     public User() {
     }
 
@@ -45,6 +46,14 @@ public class User {
         this.birthday = birthday;
         this.country = country;
         this.password = password;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 
     public int getIdUser() {

@@ -12,11 +12,20 @@ public class Role implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String rol;
     public String traveler;
     public String customer;
     @ManyToOne
     @JoinColumn(name="user_id",nullable = false)
     private User user;
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 
     public Long getId() {
         return id;
